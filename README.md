@@ -32,7 +32,6 @@ This portfolio reflects:
 - HTML  
 - CSS  
 - JavaScript  
-- React.js 
 - Other UI components and libraries  
 
 ---
