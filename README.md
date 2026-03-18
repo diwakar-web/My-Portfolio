@@ -1,5 +1,3 @@
-<img width="1400" height="1400" alt="Rimberio Band" src="https://github.com/user-attachments/assets/5b0b6f04-b42c-44f9-9e8a-457ec9e14c58" /># 🚀 My Portfolio Website
-
 Welcome to my personal portfolio website!  
 This project showcases my skills, projects, and growth in **Web Development** and **UI/UX Design**.
 
