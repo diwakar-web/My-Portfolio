@@ -1,3 +1,5 @@
+# 🚀 My Portfolio Website
+
 Welcome to my personal portfolio website!  
 This project showcases my skills, projects, and growth in **Web Development** and **UI/UX Design**.
 
@@ -30,9 +32,11 @@ This portfolio reflects:
 - HTML  
 - CSS  
 - JavaScript  
+- React.js *(if used)*  
 - Other UI components and libraries  
 
 ---
+
 
 ## 📌 What I Learned
 
@@ -47,4 +51,9 @@ This portfolio reflects:
 
 I’m always open to suggestions and feedback!  
 Feel free to open an issue or connect with me.
+
+---
+
+
+
 ⭐ If you like this project, consider giving it a star!
