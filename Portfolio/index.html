@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Diwakar's professional portfolio — Developer, Innovator, Creator." />
+  <link rel="icon" href="assets/d.png" type="image/x-icon">
+  <title>Diwakar</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ────────────────────── NAVBAR ────────────────────── -->
+  <header id="navbar">
+    <nav class="nav-container">
+      <a href="#hero" class="nav-logo">DN<span class="dot">.</span></a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#connect" class="nav-link">Connect</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+          <i class="fas fa-sun" id="theme-icon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ────────────────────── HERO ────────────────────── -->
+    <section id="hero" class="section hero-section">
+      <div class="hero-bg-gradient"></div>
+      <div class="hero-particles" id="particles"></div>
+
+      <div class="hero-content">
+        <div class="hero-text" data-aos="fade-right">
+          <p class="hero-greeting">Namaste, I'm</p>
+          <h1 class="hero-name">Diwakar <span class="accent">Nagar</span></h1>
+          <div class="hero-typewriter">
+            <span class="typewriter-text" id="typewriter"></span><span class="cursor-blink">|</span>
+          </div>
+          <p class="hero-tagline">
+            Passionate about building elegant digital experiences that bridge technology and creativity.
+          </p>
+          <div class="hero-cta">
+            <a href="assets/DIWAKAR-NAGAR.pdf" download class="btn btn-primary" id="cv-download-btn">
+              <i class="fas fa-download"></i> Download CV
+            </a>
+            <a href="#connect" class="btn btn-outline">
+              <i class="fas fa-paper-plane"></i> Get In Touch
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap" data-aos="fade-left">
+          <div class="photo-ring">
+            <img src="assets/profile.jpeg" alt="Diwakar nagar-Photo" class="hero-photo" id="hero-photo" />
+          </div>
+          <div class="photo-badge"><i class="fas fa-code"></i> Full Stack Dev</div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator">
+        <span>Scroll</span>
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- ────────────────────── ABOUT ────────────────────── -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <p class="section-label">Get to know me</p>
+          <h2 class="section-title">About <span class="accent">Me</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-info" data-aos="fade-right">
+            <p class="about-intro">
+              I'm <strong>Diwakar Nagar</strong>, a dedicated and enthusiastic MERN-developer with a passion for creating impactful solutions through technology. I thrive in collaborative environments and love turning complex problems into simple, beautiful, and intuitive designs.
+            </p>
+            <p class="about-detail">
+              My journey in tech started with a curiosity for how things work behind the screen, which grew into a full-fledged passion for programming, development, and design. I constantly strive to push boundaries and learn new technologies.
+            </p>
+
+            <div class="about-tags">
+              <span class="tag"><i class="fas fa-map-marker-alt"></i> India</span>
+              <span class="tag"><i class="fas fa-briefcase"></i> Open to Opportunities</span>
+              <span class="tag"><i class="fas fa-language"></i> English, Hindi</span>
+            </div>
+
+            <div class="skills-grid">
+              <div class="skill-item">
+                <span class="skill-name">HTML / CSS</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 92%"></div></div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">SQL / MongoDB</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 85%"></div></div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">React</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 80%"></div></div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Node.js / Express</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 75%"></div></div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Python</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 70%"></div></div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">JavaScript</span>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 68%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="education-column" data-aos="fade-left">
+            <h3 class="col-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2023 – 2027</span>
+                  <h4>B.Tech in Computer Science & Engineering</h4>
+                  <p>Shri Mata Vaishno Devi University, Katra, Jammu and Kashmir, India</p>
+                  <span class="timeline-badge">CGPA: 8.0 / 10</span>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2022 – 2023</span>
+                  <h4>Senior Secondary (XII) — Science</h4>
+                  <p>Kendriya Vidyalaya No.2, Jammu Cantt, Jammu and Kashmir, India</p>
+                  <span class="timeline-badge">82.05%</span>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2020 – 2021</span>
+                  <h4>Secondary (X) — CBSE</h4>
+                  <p>Kendriya Vidyalaya No.2, Jammu Cantt, Jammu and Kashmir, India</p>
+                  <span class="timeline-badge">85.75%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────── EXPERIENCE ────────────────────── -->
+    <section id="experience" class="section experience-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <p class="section-label">What I've done</p>
+          <h2 class="section-title">Work <span class="accent">Experience</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="exp-grid">
+
+          <div class="exp-card" data-aos="fade-up" data-delay="0">
+            <div class="exp-card-top">
+              <div class="exp-icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="exp-meta">
+                <h3>Full-Stack Web Development Intern</h3>
+                <p class="exp-company">Indian Institute of Technology Jammu</p>
+                <span class="exp-duration"><i class="far fa-calendar-alt"></i> June 2025 – Aug 2024</span>
+              </div>
+            </div>
+            <ul class="exp-points">
+              <li>Learned and applied the MERN stack including MongoDB, React, Node.js, and JavaScript.</li>
+              <li>Gained hands-on experience with Git and GitHub for version control and collaboration.</li>
+              <li>Developed a major full-stack project integrating frontend and backend technologies.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>Node.js</span><span>React</span><span>REST API</span><span>MongoDB</span>
+            </div>
+          </div>
+
+          <div class="exp-card" data-aos="fade-up" data-delay="100">
+            <div class="exp-card-top">
+              <div class="exp-icon"><i class="fas fa-code-branch"></i></div>
+              <div class="exp-meta">
+                <h3>Web Development Intern</h3>
+                <p class="exp-company">Under Government Employee</p>
+                <span class="exp-duration"><i class="far fa-calendar-alt"></i> Sept 2024 – Dec 2024</span>
+              </div>
+            </div>
+            <ul class="exp-points">
+              <li>Designed and developed a professional website to manage large datasets efficiently.</li>
+              <li>Implemented structured data handling for improved accessibility and organization.</li>
+              <li>Delivered a user-friendly interface tailored to real-world administrative needs.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>MongoDB</span><span>JavaScript</span><span>html</span><span>CSS</span>
+            </div>
+          </div>
+
+          <div class="exp-card" data-aos="fade-up" data-delay="200">
+            <div class="exp-card-top">
+              <div class="exp-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+              <div class="exp-meta">
+                <h3>Freelance Web Developer & Designer</h3>
+                <p class="exp-company">Self-Employed</p>
+                <span class="exp-duration"><i class="far fa-calendar-alt"></i> Jan 2025 – Present</span>
+              </div>
+            </div>
+            <ul class="exp-points">
+              <li>Worked on multiple projects using HTML, CSS, and modern UI/UX design principles.</li>
+              <li>Created visually appealing designs using Canva and other design tools.</li>
+              <li>Stayed updated with evolving technologies and industry trends to deliver modern solutions.</li>
+            </ul>
+            <div class="exp-tags">
+              <span>C++</span><span>DSA</span><span>Canva</span><span>MERN</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────── ACHIEVEMENTS ────────────────────── -->
+    <section id="achievements" class="section achievements-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <p class="section-label">Milestones &amp; Recognitions</p>
+          <h2 class="section-title">My <span class="accent">Achievements</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="achievements-grid">
+
+          <div class="achievement-card" data-aos="fade-up">
+            <div class="achievement-img-wrap">
+              <img src="assets/achievement1.jpeg" alt="AI summit" loading="lazy" />
+              <div class="achievement-overlay">
+                <i class="fa-solid fa-circle-notch"></i>
+              </div>
+            </div>
+            <div class="achievement-body">
+              <div class="achievement-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <h3>AI Impact Summit India Participant 2025</h3>
+              <p>Attended the AI Impact Summit India, 2025 in New Delhi, gaining insights into emerging trends in artificial intelligence, real-world applications, and industry innovations through expert talks, workshops, and networking with professionals.</p>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-aos="fade-up" data-delay="100">
+            <div class="achievement-img-wrap">
+              <img src="assets/achievement2.jpeg" alt="Chess Victory" loading="lazy" />
+              <div class="achievement-overlay">
+                <i class="fas fa-chess-king"></i>
+              </div>
+            </div>
+            <div class="achievement-body">
+              <div class="achievement-icon"><i class="fas fa-chess-king"></i></div>
+              <h3>Inter-University Chess Competition</h3>
+              <p>Secured a Gold Medal and Runner-Up position in an inter-university chess competition, demonstrating strategic thinking, problem-solving skills, and competitive excellence against top university players.</p>
+            </div>
+          </div>
+
+          <div class="achievement-card" data-aos="fade-up" data-delay="200">
+            <div class="achievement-img-wrap">
+              <img src="assets/Screenshot 2026-03-18 114227.png" alt="Spotify" loading="lazy" />
+              <div class="achievement-overlay">
+                <i class="fas fa-expand-alt"></i>
+              </div>
+            </div>
+            <div class="achievement-body">
+              <div class="achievement-icon"><i class="fas fa-headphones"></i></div>
+              <h3>Independent Music Producer</h3>
+              <p>Achieved 10K+ streams on Spotify for an original track, marking a significant milestone in music production. Collaborated on 25+ projects, including both Indian and international artists, showcasing creativity, consistency, and cross-cultural collaboration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────── CONNECT ────────────────────── -->
+    <section id="connect" class="section connect-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <p class="section-label">Let's talk</p>
+          <h2 class="section-title">Connect <span class="accent">With Me</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="connect-grid">
+
+          <!-- Social Links -->
+          <div class="social-column" data-aos="fade-right">
+            <h3 class="col-title"><i class="fas fa-share-alt"></i> Find Me Online</h3>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/diwakarnagar/" target="_blank" class="social-card linkedin">
+                <i class="fab fa-linkedin-in"></i>
+                <div>
+                  <span class="social-label">LinkedIn</span>
+                  <span class="social-handle">@diwakarnagar</span>
+                </div>
+                <i class="fas fa-arrow-right social-arrow"></i>
+              </a>
+              <a href="https://github.com/diwakar-web" target="_blank" class="social-card github">
+                <i class="fab fa-github"></i>
+                <div>
+                  <span class="social-label">GitHub</span>
+                  <span class="social-handle">@diwakar-web</span>
+                </div>
+                <i class="fas fa-arrow-right social-arrow"></i>
+              </a>
+              <a href="https://x.com/diwakar_nagar01" target="_blank" class="social-card twitter">
+                <i class="fab fa-x-twitter"></i>
+                <div>
+                  <span class="social-label">Twitter / X</span>
+                  <span class="social-handle">@diwakar_nagar01</span>
+                </div>
+                <i class="fas fa-arrow-right social-arrow"></i>
+              </a>
+              <a href="https://www.instagram.com/diwakar_nagar01/" target="_blank" class="social-card instagram">
+                <i class="fab fa-instagram"></i>
+                <div>
+                  <span class="social-label">Instagram</span>
+                  <span class="social-handle">@diwakar-nagar01</span>
+                </div>
+                <i class="fas fa-arrow-right social-arrow"></i>
+              </a>
+              <!-- WhatsApp direct link -->
+              <a href="https://wa.me/919906251573?text=Hi%20Diwakar%2C%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20connect!" target="_blank" class="social-card whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                  <span class="social-label">WhatsApp</span>
+                  <span class="social-handle">Message me directly</span>
+                </div>
+                <i class="fas fa-arrow-right social-arrow"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-column" data-aos="fade-left">
+            <h3 class="col-title"><i class="fas fa-envelope-open-text"></i> Send a Message</h3>
+
+            <div id="form-status" class="form-status" style="display:none;"></div>
+
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name" />
+                  <span class="form-error" id="name-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="john@email.com" required autocomplete="email" />
+                  <span class="form-error" id="email-error"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Let's collaborate!" required />
+                <span class="form-error" id="subject-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or just say hello..." required></textarea>
+                <span class="form-error" id="message-error"></span>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                  <i class="fas fa-paper-plane"></i>
+                  <span id="btn-text">Send Message</span>
+                  <span id="btn-loader" class="btn-loader" style="display:none;"><i class="fas fa-circle-notch fa-spin"></i></span>
+                </button>
+                <!-- WhatsApp quick message -->
+                <a href="https://wa.me/919906251573?text=Hi%20Diwakar%2C%20I%20saw%20your%20portfolio!" target="_blank" class="btn btn-whatsapp">
+                  <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ────────────────────── FOOTER ────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p class="footer-logo">DN<span class="dot">.</span></p>
+      <p class="footer-copy">© 2026 Diwakar Nagar. Built with ❤️ &amp; passion.</p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/diwakarnagar/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/diwakar-web" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/919906251573" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
