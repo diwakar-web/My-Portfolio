@@ -1,4 +1,4 @@
-# 🚀 My Portfolio Website
+<img width="1400" height="1400" alt="Rimberio Band" src="https://github.com/user-attachments/assets/5b0b6f04-b42c-44f9-9e8a-457ec9e14c58" /># 🚀 My Portfolio Website
 
 Welcome to my personal portfolio website!  
 This project showcases my skills, projects, and growth in **Web Development** and **UI/UX Design**.
@@ -32,20 +32,7 @@ This portfolio reflects:
 - HTML  
 - CSS  
 - JavaScript  
-- React.js *(if used)*  
 - Other UI components and libraries  
-
----
-
-## 📸 Preview
-
-(Add screenshots here)
-
----
-
-## 🔗 Live Demo
-
-👉 [View Portfolio](your-portfolio-link)
 
 ---
 
@@ -62,14 +49,4 @@ This portfolio reflects:
 
 I’m always open to suggestions and feedback!  
 Feel free to open an issue or connect with me.
-
----
-
-## 📬 Contact
-
-- LinkedIn: (your link)  
-- Email: (your email)
-
----
-
 ⭐ If you like this project, consider giving it a star!
