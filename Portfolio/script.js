@@ -88,6 +88,7 @@ navList.querySelectorAll('.nav-link').forEach(link => {
 ╚═══════════════════════════════════════════ */
 const roles = [
   'Full Stack Developer 💻',
+  'Blogger 📑',
   'UI/UX Enthusiast 🎨',
   'Open Source Contributor 🌐',
   'Problem Solver 🧩',
