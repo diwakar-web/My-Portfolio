@@ -341,7 +341,74 @@ function hideStatus() {
 
 
 /* ═══════════════════════════════════════════╗
-   9. SMOOTH SCROLL for in-page links
+   9. HORIZONTAL SCROLL CAROUSELS (Experience & Projects)
+╚═══════════════════════════════════════════ */
+function createHorizontalCarousel(wrapperId, ribbonId) {
+  const wrapper = document.getElementById(wrapperId);
+  const ribbon  = document.getElementById(ribbonId);
+  const progressBar = document.getElementById('projects-progress-bar');
+  const progressEl  = document.querySelector('.projects-progress');
+
+  if (!wrapper || !ribbon) return;
+
+  // Wrap the ribbon in a sticky container for the pinning effect
+  const stickyDiv = document.createElement('div');
+  stickyDiv.className = 'projects-ribbon-sticky';
+  wrapper.insertBefore(stickyDiv, ribbon);
+  stickyDiv.appendChild(ribbon);
+
+  function updateRibbon() {
+    const wrapperRect = wrapper.getBoundingClientRect();
+    const wrapperTop  = wrapperRect.top;
+    const wrapperH    = wrapper.offsetHeight;
+    const viewportH   = window.innerHeight;
+
+    // How far through the wrapper the user has scrolled (0 → 1)
+    const scrollRange = wrapperH - viewportH;
+    const scrolled    = Math.max(0, -wrapperTop);
+    const progress    = Math.min(1, Math.max(0, scrolled / scrollRange));
+
+    // Total horizontal travel = ribbon width - viewport width
+    const ribbonW  = ribbon.scrollWidth;
+    const visibleW = wrapper.offsetWidth;
+    const maxShift = Math.max(0, ribbonW - visibleW + 60);
+
+    // Apply transform
+    ribbon.style.transform = `translateX(-${progress * maxShift}px)`;
+
+    // Update progress bar (only for the projects section or generic)
+    if (wrapperId === 'projects-scroll-wrapper' && progressBar) {
+       progressBar.style.width = `${progress * 100}%`;
+    }
+
+    // Show/hide progress bar when inside the wrapper
+    const inWrapper = wrapperTop < viewportH * 0.2 && wrapperTop > -(wrapperH - viewportH * 0.5);
+    if (wrapperId === 'projects-scroll-wrapper' && progressEl) {
+      progressEl.classList.toggle('visible', inWrapper);
+    }
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateRibbon();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateRibbon();
+}
+
+// Initialize for both sections
+createHorizontalCarousel('experience-scroll-wrapper', 'experience-ribbon');
+createHorizontalCarousel('projects-scroll-wrapper', 'projects-ribbon');
+
+
+/* ═══════════════════════════════════════════╗
+   10. SMOOTH SCROLL for in-page links
 ╚═══════════════════════════════════════════ */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {

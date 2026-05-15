@@ -600,110 +600,83 @@ ul { list-style: none; }
 }
 
 /* ─── EXPERIENCE ─── */
-.experience-section { background: var(--bg-primary); }
-
-.exp-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  gap: 24px;
+.experience-section { 
+  background: var(--bg-primary); 
+  padding-bottom: 0;
+}
+[data-theme="light"] .experience-section {
+  background: var(--bg-secondary);
 }
 
-.exp-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--r-lg);
-  padding: 28px;
-  transition: all var(--t-mid);
-  position: relative;
-  overflow: hidden;
-}
-.exp-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--accent-gradient);
-  opacity: 0;
-  transition: opacity var(--t-mid);
-  z-index: 0;
-}
-.exp-card:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md), 0 0 40px var(--accent-glow);
-}
-.exp-card > * { position: relative; z-index: 1; }
-
-.exp-card-top {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-.exp-icon {
-  width: 48px; height: 48px;
-  border-radius: var(--r-sm);
-  background: var(--accent-glow);
-  border: 1px solid var(--border-hover);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--accent-light);
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
-.exp-meta h3 {
-  font-size: 1rem;
+/* Refined typography for experience cards inside carousel */
+.project-card .exp-company {
+  font-size: 0.95rem;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 4px;
-}
-.exp-company {
-  font-size: 0.875rem;
-  font-weight: 600;
   color: var(--accent-light);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
-.exp-duration {
-  font-size: 0.8rem;
-  color: var(--text-muted);
+.project-card .exp-duration {
+  opacity: 0.8;
+}
+/* ─── PROJECTS & EXPERIENCE CAROUSEL CORE ─── */
+.projects-section, .experience-section {
+  padding-bottom: 0 !important;
+}
+
+.projects-scroll-wrapper {
+  position: relative;
+  height: 300vh;
+}
+
+.projects-scroll-wrapper .projects-ribbon-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   display: flex;
   align-items: center;
-  gap: 5px;
+  overflow: hidden;
+  background: transparent; /* Changed from var(--bg-secondary) */
 }
 
-.exp-points {
-  padding-left: 0;
-  margin-bottom: 16px;
+.projects-ribbon {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  gap: 32px;
+  padding: 0 60px;
+  will-change: transform;
+  transition: none;
 }
-.exp-points li {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  padding-left: 16px;
+
+/* ─── Project Card ─── */
+.project-card {
   position: relative;
-  line-height: 1.6;
+  flex: 0 0 380px;
+  height: 480px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  transition: transform var(--t-mid), box-shadow var(--t-mid), border-color var(--t-mid);
+  background: var(--bg-card);
 }
-.exp-points li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: var(--accent-light);
-  font-size: 0.8rem;
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md), 0 0 60px var(--accent-glow);
 }
 
-.exp-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+/* Background layer — supports images or gradients */
+.project-card-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.55; /* Increased from 0.25 */
+  transition: opacity var(--t-mid), transform var(--t-slow);
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
 }
-.exp-tags span {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: var(--r-pill);
+.project-card:hover .project-card-bg {
+  opacity: 0.75; /* Increased from 0.45 */
+  transform: scale(1.1);
 }
 
 /* ─── ACHIEVEMENTS ─── */
@@ -721,12 +694,30 @@ ul { list-style: none; }
   border-radius: var(--r-lg);
   overflow: hidden;
   transition: all var(--t-mid);
+  position: relative;
 }
 .achievement-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-6px);
   box-shadow: var(--shadow-md), 0 0 40px var(--accent-glow);
 }
+
+/* Ghost number on achievement cards */
+.achievement-card-number {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent-light);
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;                  /* Behind content */
+  transition: opacity var(--t-mid);
+}
+.achievement-card:hover .achievement-card-number { opacity: 0.15; }
 
 .achievement-img-wrap {
   position: relative;
@@ -754,7 +745,11 @@ ul { list-style: none; }
   transition: opacity var(--t-mid);
   backdrop-filter: blur(2px);
 }
-.achievement-body { padding: 24px; }
+.achievement-body { 
+  padding: 24px; 
+  position: relative; 
+  z-index: 2; 
+}
 .achievement-icon {
   width: 44px; height: 44px;
   background: var(--accent-glow);
@@ -776,6 +771,221 @@ ul { list-style: none; }
   font-size: 0.875rem;
   color: var(--text-secondary);
   line-height: 1.75;
+}
+
+/* ─── PROJECTS HORIZONTAL CAROUSEL ─── */
+.projects-section {
+  background: var(--bg-secondary);
+  padding-bottom: 0;
+  /* NO overflow:hidden — it breaks position:sticky inside */
+}
+
+.projects-scroll-wrapper {
+  position: relative;
+  height: 300vh;
+}
+
+.projects-scroll-wrapper .projects-ribbon-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;            /* clip here, NOT on the section */
+  background: var(--bg-secondary);
+}
+
+.projects-ribbon {
+  display: flex;
+  gap: 32px;
+  padding: 0 60px;
+  /* will-change for smooth GPU transform */
+  will-change: transform;
+  transition: none; /* JS handles transform directly */
+}
+
+/* ─── Project Card ─── */
+.project-card {
+  position: relative;
+  flex: 0 0 380px;
+  height: 480px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  transition: transform var(--t-mid), box-shadow var(--t-mid), border-color var(--t-mid);
+}
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md), 0 0 60px var(--accent-glow);
+}
+
+/* Gradient background layer */
+.project-card-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;               /* more visible */
+  transition: opacity var(--t-mid);
+}
+.project-card:hover .project-card-bg {
+  opacity: 0.38;
+}
+
+/* Card content */
+.project-card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px 28px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(10, 10, 15, 0.4) 40%,
+    rgba(10, 10, 15, 0.92) 100%
+  );
+}
+[data-theme="light"] .project-card-content {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 40%,
+    rgba(255, 255, 255, 0.95) 100%
+  );
+}
+
+.project-number {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--accent-light);
+  opacity: 0.12;
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  line-height: 1;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity var(--t-mid);
+}
+.project-card:hover .project-number {
+  opacity: 0.25;
+}
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.project-tech-tags span {
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  color: var(--accent-light);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--r-pill);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.project-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── Hover Overlay with GitHub & External Link ─── */
+.project-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(10, 10, 15, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity var(--t-mid);
+  pointer-events: none;
+}
+[data-theme="light"] .project-card-overlay {
+  background: rgba(255, 255, 255, 0.8);
+}
+.project-card:hover .project-card-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project-overlay-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 24px var(--accent-glow);
+  transition: all var(--t-mid);
+  transform: translateY(16px);
+  opacity: 0;
+  text-decoration: none;
+}
+.project-card:hover .project-overlay-btn {
+  transform: translateY(0);
+  opacity: 1;
+}
+.project-card:hover .project-overlay-btn:nth-child(2) {
+  transition-delay: 0.08s;
+}
+.project-overlay-btn:hover {
+  transform: translateY(-4px) scale(1.1) !important;
+  box-shadow: 0 8px 36px var(--accent-glow);
+}
+
+/* ─── Scroll Progress Bar ─── */
+.projects-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--bg-card);
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.projects-progress.visible {
+  opacity: 1;
+}
+.projects-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--accent-gradient);
+  border-radius: 0 2px 2px 0;
+  transition: width 0.05s linear;
 }
 
 /* ─── CONNECT ─── */
@@ -984,6 +1194,8 @@ ul { list-style: none; }
   .photo-ring      { width: 260px; height: 260px; }
   .about-grid      { grid-template-columns: 1fr; gap: 48px; }
   .connect-grid    { grid-template-columns: 1fr; gap: 48px; }
+  .project-card    { flex: 0 0 320px; height: 420px; }
+  .projects-ribbon { gap: 24px; padding: 0 32px; }
 }
 
 @media (max-width: 768px) {
@@ -1018,4 +1230,7 @@ ul { list-style: none; }
   .hero-name { font-size: 2.4rem; }
   .photo-ring { width: 220px; height: 220px; }
   .footer-content { flex-direction: column; text-align: center; }
+  .project-card { flex: 0 0 280px; height: 400px; }
+  .projects-ribbon { gap: 18px; padding: 0 20px; }
+  .project-overlay-btn { width: 50px; height: 50px; font-size: 1.1rem; }
 }
